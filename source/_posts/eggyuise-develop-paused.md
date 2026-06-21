@@ -1,7 +1,7 @@
 ---
 title: EggyUI-SE项目已经暂停开发
 date: 2026-06-14 09:48:04
-tags:
+categories: 公告
 ---
 
 目前EggyUI-SE项目已经暂停开发，原因是——我们想把更多精力放在其他项目的开发上。

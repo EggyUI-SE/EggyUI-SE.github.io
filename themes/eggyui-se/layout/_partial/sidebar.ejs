@@ -1,0 +1,37 @@
+<aside class="site-sidebar">
+  <div class="sidebar-section">
+    <h3><%= __('categories') %></h3>
+    <ul class="category-list">
+      <% site.categories.forEach(function(cat) { %>
+        <li>
+          <a href="<%- url_for(cat.path) %>">
+            <%= cat.name %>
+            <span class="count"><%= cat.posts.length %></span>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+  
+  <!--
+  <div class="sidebar-section">
+    <h3><%= __('tags') %></h3>
+    <div class="tag-cloud">
+      <% site.tags.forEach(function(tag) { %>
+        <a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
+      <% }) %>
+    </div>
+  </div>
+  -->
+  
+  <div class="sidebar-section">
+    <h3><%= __('recent_posts') %></h3>
+    <ul class="recent-posts">
+      <% site.posts.slice(0, 5).forEach(function(post) { %>
+        <li>
+          <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</aside>

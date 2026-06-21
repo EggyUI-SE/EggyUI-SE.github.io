@@ -1,0 +1,17 @@
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="social-links">
+      <% if (theme.social) { %>
+        <% Object.keys(theme.social).forEach(function(key) { %>
+          <a href="<%= theme.social[key] %>" target="_blank" rel="noopener">
+            <%= key %>
+          </a>
+        <% }) %>
+      <% } %>
+    </div>
+    <div class="legal-text">
+      <p><%= theme.footer.copyright %></p>
+      <p class="yszc"><%= theme.footer.legal_text %></p>
+    </div>
+  </div>
+</footer

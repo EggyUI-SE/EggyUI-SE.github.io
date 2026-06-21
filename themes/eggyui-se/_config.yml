@@ -1,0 +1,11 @@
+menu:
+  Home: /
+  Archives: /archives
+  About: /about
+
+social:
+  GitHub: https://github.com/EggyUI-SE
+
+footer:
+  copyright: '© 2026 AloneVoyager'
+  legal_text: 'Powered by Hexo'

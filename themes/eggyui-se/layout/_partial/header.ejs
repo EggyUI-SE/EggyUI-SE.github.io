@@ -1,0 +1,20 @@
+<header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="<%- url_for('/') %>"><%= config.title %></a>
+    </div>
+    <nav class="site-nav">
+      <ul>
+        <% if (theme.menu) { %>
+          <% Object.keys(theme.menu).forEach(function(key) { %>
+            <li>
+              <a href="<%- url_for(theme.menu[key]) %>" <% if (page.path === theme.menu[key] || (key.toLowerCase() === 'home' && page.path === '')) { %>class="active"<% } %>>
+                <%= key %>
+              </a>
+            </li>
+          <% }) %>
+        <% } %>
+      </ul>
+    </nav>
+  </div>
+</header>

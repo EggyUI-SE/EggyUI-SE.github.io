@@ -1,0 +1,37 @@
+<%- partial('_partial/header') %>
+
+<main class="main-content">
+  <div class="content-wrapper">
+    <article class="post-list">
+      <% page.posts.forEach(function(post) { %>
+        <article class="post-item-full">
+          <h2 class="post-title">
+            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+          </h2>
+          <div class="post-meta">
+            <span><%= __('posted_on') %> <%= post.date.format(config.date_format) %></span>
+          </div>
+          <div class="post-body">
+            <%- post.content %>
+          </div>
+        </article>
+      <% }) %>
+      
+      <% if (page.total > 1) { %>
+        <nav class="pagination">
+          <% if (page.prev) { %>
+            <a href="<%- url_for(page.prev) %>" class="prev">上一页</a>
+          <% } %>
+          <span class="page-number">第 <%= page.current %> / <%= page.total %> 页</span>
+          <% if (page.next) { %>
+            <a href="<%- url_for(page.next) %>" class="next">下一页</a>
+          <% } %>
+        </nav>
+      <% } %>
+    </article>
+    
+    <%- partial('_partial/sidebar') %>
+  </div>
+</main>
+
+<%- partial('_partial/footer') %>

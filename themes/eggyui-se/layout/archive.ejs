@@ -1,0 +1,86 @@
+<%- partial('_partial/header') %>
+
+<main class="main-content">
+  <div class="content-wrapper">
+    <article class="page-content">
+      <h1 class="page-title">
+        <% if (page.archive && page.year) { %>
+          <%= page.year %>
+          <% if (page.month) { %>-<%= page.month %>
+          <% } %>
+        <% } else { %>
+          <%= __('archives') %>
+        <% } %>
+      </h1>
+      
+      <div class="archive-grouped">
+        <% 
+          var currentYear = '';
+          var currentMonth = '';
+          var firstYear = true;
+          var firstMonth = true;
+          
+          page.posts.forEach(function(post, index) {
+            var postYear = post.date.format('YYYY');
+            var postMonth = post.date.format('MM');
+            var postMonthName = post.date.format('MMMM');
+            
+            if (postYear !== currentYear) {
+              if (!firstYear) {
+        %>
+                </ul>
+              </div>
+            </div>
+        <% } %>
+              <div class="archive-year">
+                <h2><%= postYear %></h2>
+                <div class="archive-month">
+                  <h3><%= postMonthName %> (<%= postYear %>-<%= postMonth %>)</h3>
+                  <ul class="archive-month-list">
+                    <li>
+                      <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+                      <span class="archive-date"><%= post.date.format('DD') %></span>
+                    </li>
+        <% 
+              currentYear = postYear;
+              currentMonth = postMonth;
+              firstYear = false;
+            } else if (postMonth !== currentMonth) {
+        %>
+                  </ul>
+                </div>
+                <div class="archive-month">
+                  <h3><%= postMonthName %> (<%= postYear %>-<%= postMonth %>)</h3>
+                  <ul class="archive-month-list">
+                    <li>
+                      <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+                      <span class="archive-date"><%= post.date.format('DD') %></span>
+                    </li>
+        <% 
+              currentMonth = postMonth;
+            } else {
+        %>
+                    <li>
+                      <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+                      <span class="archive-date"><%= post.date.format('DD') %></span>
+                    </li>
+        <% 
+            }
+            
+            if (index === page.posts.length - 1) {
+        %>
+                  </ul>
+                </div>
+              </div>
+        <% 
+            }
+          });
+        %>
+      </div>
+    </article>
+    
+    <%- partial('_partial/sidebar') %>
+  </div>
+</main>
+
+<%- partial('_partial/footer') %>

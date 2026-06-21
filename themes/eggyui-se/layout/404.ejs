@@ -1,0 +1,17 @@
+<%- partial('_partial/header') %>
+
+<main class="main-content">
+  <div class="content-wrapper">
+    <article class="page-content not-found">
+      <div class="not-found-icon">404</div>
+      <h1 class="page-title">页面未找到</h1>
+      <p class="not-found-message">抱歉，您访问的页面不存在或已被移动。</p>
+      <div class="not-found-actions">
+        <a href="<%- url_for('/') %>" class="btn btn-primary">返回首页</a>
+        <a href="<%- url_for('/archives') %>" class="btn btn-secondary">浏览归档</a>
+      </div>
+    </article>
+  </div>
+</main>
+
+<%- partial('_partial/footer') %>
