@@ -1,3 +1,12 @@
+/* Cascadia Code */
+@import url("https://fontsapi.zeoseven.com/447/main/result.css");
+
+/* Noto Sans CJK */
+@import url("https://fontsapi.zeoseven.com/69/main/result.css");
+
+/* Segoe Pro */
+@import url("https://fonts.cdnfonts.com/css/segoe-pro");
+
 * {
   margin: 0;
   padding: 0;
@@ -5,23 +14,34 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Segoe Pro Display', 'Segoe UI', 'Noto Sans CJK', 'Microsoft YaHei', Arial, sans-serif;
   color: #333;
   background-color: #f8fafc;
   line-height: 1.6;
 }
 
-a {
-  text-decoration: none;
-  color: #1976d2;
+pre {
+  font-family: 'Cascadia Code', monospace;
+  background-color: #f0f7ff;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
 }
 
-a:hover {
-  color: #3498db;
+code {
+  font-family: 'Cascadia Code', monospace;
+  background-color: #f0f7ff;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+a {
+  text-decoration: none;
+  color: #2c3e50;
 }
 
 .site-header {
-  background: linear-gradient(90deg, #1976d2, #3498db);
+  background: linear-gradient(90deg, #3498db, #1976d2);
   padding: 16px 20px;
   box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
   position: sticky;
@@ -100,7 +120,7 @@ a:hover {
 }
 
 .post-meta {
-  font-size: 13px;
+  font-size: 14px;
   color: #888;
   margin-bottom: 12px;
 }
@@ -197,7 +217,7 @@ a:hover {
 .page-content {
   flex: 1;
   background-color: #fff;
-  padding: 30px;
+  padding: 24px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
@@ -462,32 +482,36 @@ a:hover {
 }
 
 .btn {
-  padding: 12px 24px;
-  border-radius: 4px;
-  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: large;
   font-weight: 500;
   text-decoration: none;
   display: inline-block;
+  transition: all .3s ease;
+  cursor: pointer;
 }
 
 .btn-primary {
-  background-color: #3498db;
-  color: #fff;
+  background: skyblue;
+  border: 2px solid #2980b9;
+  color: #2c3e50;
+  box-shadow: 0 4px 8px rgba(52, 152, 219, .2);
 }
 
 .btn-primary:hover {
-  background-color: #1976d2;
-  color: #fff;
+  background: linear-gradient(90deg, #19d4e1, #f1c40f);
 }
 
 .btn-secondary {
-  background-color: #f0f7ff;
-  color: #3498db;
-  border: 1px solid #e6f4ff;
+  background: #fee57e;
+  border: 2px solid #f1c40f;
+  color: #2c3e50;
+  box-shadow: 0 4px 8px rgba(255, 215, 0, .2);
 }
 
 .btn-secondary:hover {
-  background-color: #e6f4ff;
+  background: linear-gradient(90deg, #e6b67e, #f7aa10);
 }
 
 @media (max-width: 768px) {
