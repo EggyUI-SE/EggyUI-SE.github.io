@@ -300,7 +300,7 @@ a {
 }
 
 .site-footer {
-  background: linear-gradient(90deg, #1976d2, #3498db);
+  background: linear-gradient(90deg, #3498db, #1976d2);
   padding: 24px 20px;
   margin-top: 40px;
 }
